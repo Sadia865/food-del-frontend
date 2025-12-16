@@ -1,0 +1,136 @@
+/* Background Overlay */
+.login-popup {
+  position: fixed;               /* stays fixed even if page scrolls */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #00000090;
+  display: grid;
+  place-items: center;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+/* Popup Container */
+.login-popup-container {
+  width: min(90%, 400px);
+  background: #ffffff;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  animation: slideDown 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Title Bar */
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-popup-title img {
+  width: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-popup-title img:hover {
+  transform: rotate(90deg);
+}
+
+/* Input Fields */
+.login-popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-popup-inputs input {
+  padding: 12px 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.login-popup-inputs input:focus {
+  border-color: tomato;
+  box-shadow: 0 0 4px rgba(255, 99, 71, 0.4);
+}
+
+/* Button */
+.login-popup-container button {
+  background: tomato;
+  padding: 12px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-popup-container button:hover {
+  background: #e9533e;
+}
+
+/* Checkbox Section */
+.login-popup-condition {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.login-popup-condition p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Switch Login / Sign Up */
+.login-popup-container p span {
+  color: tomato;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 480px) {
+  .login-popup-container {
+    padding: 20px 22px;
+    width: 92%;
+    font-size: 14px;
+  }
+
+  .login-popup-inputs input {
+    font-size: 14px;
+  }
+
+  .login-popup-container button {
+    font-size: 15px;
+  }
+}

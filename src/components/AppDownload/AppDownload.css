@@ -1,0 +1,47 @@
+/* AppDownload.css */
+
+.app-download {
+  background-color: #ff6347; /* Tomato-like color for theme */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.app-download p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.app-download-platforms {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.app-download-platforms img {
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-download-platforms img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+  .app-download p {
+    font-size: 1.2rem;
+  }
+
+  .app-download-platforms img {
+    height: 50px;
+  }
+}
