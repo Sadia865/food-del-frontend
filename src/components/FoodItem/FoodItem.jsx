@@ -4,12 +4,13 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart,url } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext); // ADD url here
 
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img src={url+"/images/"+image} className="food-item-image" alt={name} />
+        {/* CHANGE THIS LINE - use dynamic URL from context */}
+        <img src={`${url}/uploads/${image}`} alt={name} />
 
         {!cartItems[id] ? (
           <img
